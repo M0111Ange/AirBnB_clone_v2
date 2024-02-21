@@ -7,9 +7,12 @@ from models.place import place_amenity
 
 
 class Amenity(BaseModel, Base):
-    """This is the class for Amenity
+    """This is the class for Amenity which Inherits
+        from SQLAlchemy Base and links to the MySQL table amenities
     Attributes:
-        name: input name
+        __tablename__ (str): The name of the MySQL table to store Amenities.
+        name (sqlalchemy String): The amenity name.
+        place_amenities (sqlalchemy relationship): Place-Amenity relationship.
     """
     __tablename__ = "amenities"
     name = Column(String(128), nullable=False)
